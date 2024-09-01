@@ -12,6 +12,7 @@ public class LibraryMangementSystemTest {
 
     @Test
     public void testcheck() {
+
         System.out.println("Test Module Running");
     }
 
@@ -44,5 +45,14 @@ public class LibraryMangementSystemTest {
         library.borrowBook(isbn);
         Book book = library.getBook(isbn);
         assertTrue(book.bookBorrowed(), "Book should be marked as borrowed after borrowing.");
+    }
+    @Test
+    public void testReturnBook() throws BookNotFoundException, BookAlreadyBorrowedException {
+        String isbn = "1234567890";
+        library.addBook(isbn, "The Great Gatsby", "F. Scott Fitzgerald", 1925);
+        library.borrowBook(isbn);
+        library.returnBook(isbn);
+        Book book = library.getBook(isbn);
+        assertFalse(book.isBorrowed(), "Book should not be borrowed after returning.");
     }
 }
