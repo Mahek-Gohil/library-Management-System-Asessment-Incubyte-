@@ -62,4 +62,24 @@ public class LibraryMangementSystemTest {
             library.getBook("41-7643210941"); // Non-existent ISBN
         }, "BookNotFoundException would be thrown for non-existing ISBN.");
     }
+    @Test
+    public void testBookAlreadyBorrowed() throws BookNotFoundException, BookAlreadyBorrowedException {
+        String isbn = "78-0451524935";
+        library.addBook(isbn, "1984", "George Orwell", 1949);
+        library.borrowBook(isbn);
+
+        assertThrows(BookAlreadyBorrowedException.class, () -> {
+            library.borrowBook(isbn);
+        }, "BookAlreadyBorrowedException would be thrown if the book is already borrowed.");
+    }
+    @Test
+    public void testViewAvailableBooksWhereAllBooksAreAvailable() {
+        library.addBook("78-0451524935", "1984", "George Orwell", 1949);
+        library.addBook("978-0439139601", "Harry Potter and the Goblet of Fire", "J.K. Rowling", 2000);
+        library.addBook("978-0140449136"	,"The Odyssey","Homer",800);
+        library.addBook("978-0316769488","The Catcher in the Rye","J.D. Salinger",1951);
+        List<Book> availableBooks = library.viewAllAvailableBooks();
+        assertEquals(2, availableBooks.size(), "All books should be available.");
+    }
+
 }

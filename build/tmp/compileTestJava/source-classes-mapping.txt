@@ -1,4 +1,0 @@
-com/LibraryManagementSystem/BookTest.java
- com.LibraryManagementSystem.BookTest
-com/LibraryManagementSystem/LibraryMangementSystemTest.java
- com.LibraryManagementSystem.LibraryMangementSystemTest
