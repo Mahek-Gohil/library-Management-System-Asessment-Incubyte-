@@ -22,9 +22,13 @@ public class LibraryMangementSystem {
         }
     }
     //This method returns Book isbn if it's available in HashMap books
-    public Book getBook(String isbn) {
+    public Book getBook(String isbn) throws BookNotFoundException {
+        if (!books.containsKey(isbn)) {
+            throw new BookNotFoundException("Book with ISBN " + isbn + " not found.");
+        }
         return books.get(isbn);
     }
+
     /*This method allows user to borrrow existing book from library.
      Method also checks if book is not already borrowed and if book exists in Library*/
     public void borrowBook(String isbn) throws BookNotFoundException, BookAlreadyBorrowedException {

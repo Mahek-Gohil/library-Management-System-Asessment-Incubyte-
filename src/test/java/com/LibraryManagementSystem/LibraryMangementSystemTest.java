@@ -22,7 +22,7 @@ public class LibraryMangementSystemTest {
     }
 
     @Test
-    public void testAddBookToLibrary() {
+    public void testAddBookToLibrary() throws BookNotFoundException {
         String isbn = "78-0451524935";
         String author = "George Orwell";
         String title ="1984";
@@ -56,9 +56,10 @@ public class LibraryMangementSystemTest {
         assertFalse(book.bookBorrowed(), "Book should not be borrowed after returning.");
     }
     @Test
-    public void testBookNotFoundException(){
+    public void testBookNotFound() {
+        // Test for a book that doesn't exist
         assertThrows(BookNotFoundException.class, () -> {
-            library.getBook("21-9824256723");
-        });
+            library.getBook("41-7643210941"); // Non-existent ISBN
+        }, "BookNotFoundException would be thrown for non-existing ISBN.");
     }
 }
