@@ -14,4 +14,18 @@ public class BookTest {
         assertEquals(1949, book.getYear());
         assertFalse(book.isBorrowed(), "Book should not be borrowed initially");
     }
+    @Test
+    public void testBorrowBook() {
+        Book book = new Book("78-0451524935", "1984", "George Orwell", 1949);
+        book.borrow();
+        assertTrue(book.isBorrowed(), "Book would be marked as borrowed after calling borrow()");
+    }
+    @Test
+    public void testReturnBook() {
+        Book book = new Book("78-0451524935", "1984", "George Orwell", 1949);
+        book.borrow();
+        book.returnBook();
+        assertFalse(book.isBorrowed(), "Book should not be borrowed after returning");
+    }
+
 }
