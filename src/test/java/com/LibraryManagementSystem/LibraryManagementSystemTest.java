@@ -9,23 +9,25 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class LibraryMangementSystemTest {
+public class LibraryManagementSystemTest {
 
     private LibraryManagementSystem library;
 
     @Test
-    public void testcheck() {
-
+    public void testCheck() {
+        //Initial test case to check working of JUnit5 module.
         System.out.println("Test Module Running");
     }
 
     @BeforeEach
     public void setupLibrary() {
+        //Initialize object before each test case.
         library = new LibraryManagementSystem();
     }
 
     @Test
     public void testAddBookToLibrary() throws BookNotFoundException {
+        //Test for adding book.
         String isbn = "78-0451524935";
         String author = "George Orwell";
         String title ="1984";
@@ -35,6 +37,7 @@ public class LibraryMangementSystemTest {
 
     @Test
     public void testGetBookFromLibrary() throws BookNotFoundException {
+        //Test for fetching book with isbn no. .
         String isbn = "78-0451524935";
         String author = "George Orwell";
         library.addBook(isbn, "1984", author, 1949);
@@ -43,6 +46,7 @@ public class LibraryMangementSystemTest {
     }
     @Test
     public void testBorrowBookFromLibrary() throws BookNotFoundException, BookAlreadyBorrowedException {
+        //Test to borrow available book from library.
         String isbn = "78-0451524935";
         library.addBook(isbn, "1984", "George Orwell", 1949);
         library.borrowBook(isbn);
@@ -51,22 +55,24 @@ public class LibraryMangementSystemTest {
     }
     @Test
     public void testReturnBook() throws BookNotFoundException, BookAlreadyBorrowedException {
+        //Test to return borrowed book.
         String isbn = "78-0451524935";
         library.addBook(isbn, "1984", "George Orwell", 1949);
         library.borrowBook(isbn);
         library.returnBook(isbn);
         Book book = library.getBook(isbn);
-        assertFalse(book.bookBorrowed(), "Book should not be borrowed after returning.");
+        assertFalse(book.bookBorrowed());
     }
     @Test
     public void testBookNotFound() {
-        // Test for a book that doesn't exist
+        // Test for a book that doesn't exist.
         assertThrows(BookNotFoundException.class, () -> {
             library.getBook("41-7643210941"); // Non-existent ISBN
         }, "BookNotFoundException would be thrown for non-existing ISBN.");
     }
     @Test
     public void testBookAlreadyBorrowed() throws BookNotFoundException, BookAlreadyBorrowedException {
+        //Test for book that are already borrowed.
         String isbn = "78-0451524935";
         library.addBook(isbn, "1984", "George Orwell", 1949);
         library.borrowBook(isbn);
@@ -77,6 +83,7 @@ public class LibraryMangementSystemTest {
     }
     @Test
     public void testViewAvailableBooksWhereAllBooksAreAvailable() throws BookNotFoundException, BookAlreadyBorrowedException {
+        //Test for viewing all available books.
         String isbn = "978-0439139601";
         library.addBook("978-0451524935","1984", "George Orwell", 1949);
         library.addBook("978-0439139601","Harry Potter and the Goblet of Fire", "J.K. Rowling", 2000);
