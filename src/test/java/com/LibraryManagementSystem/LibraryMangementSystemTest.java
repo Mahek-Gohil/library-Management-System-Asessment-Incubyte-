@@ -40,19 +40,25 @@ public class LibraryMangementSystemTest {
     }
     @Test
     public void testBorrowBookFromLibrary() throws BookNotFoundException, BookAlreadyBorrowedException {
-        String isbn = "1234567890";
-        library.addBook(isbn, "The Great Gatsby", "F. Scott Fitzgerald", 1925);
+        String isbn = "78-0451524935";
+        library.addBook(isbn, "1984", "George Orwell", 1949);
         library.borrowBook(isbn);
         Book book = library.getBook(isbn);
         assertTrue(book.bookBorrowed(), "Book should be marked as borrowed after borrowing.");
     }
     @Test
     public void testReturnBook() throws BookNotFoundException, BookAlreadyBorrowedException {
-        String isbn = "1234567890";
-        library.addBook(isbn, "The Great Gatsby", "F. Scott Fitzgerald", 1925);
+        String isbn = "78-0451524935";
+        library.addBook(isbn, "1984", "George Orwell", 1949);
         library.borrowBook(isbn);
         library.returnBook(isbn);
         Book book = library.getBook(isbn);
-        assertFalse(book.isBorrowed(), "Book should not be borrowed after returning.");
+        assertFalse(book.bookBorrowed(), "Book should not be borrowed after returning.");
+    }
+    @Test
+    public void testBookNotFoundException(){
+        assertThrows(BookNotFoundException.class, () -> {
+            library.getBook("21-9824256723");
+        });
     }
 }

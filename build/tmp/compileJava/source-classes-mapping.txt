@@ -1,4 +1,8 @@
 com/LibraryManagementSystem/Book.java
  com.LibraryManagementSystem.Book
+com/LibraryManagementSystem/Exceptions/BookNotFoundException.java
+ com.LibraryManagementSystem.Exceptions.BookNotFoundException
+com/LibraryManagementSystem/Exceptions/BookAlreadyBorrowedException.java
+ com.LibraryManagementSystem.Exceptions.BookAlreadyBorrowedException
 com/LibraryManagementSystem/LibraryMangementSystem.java
  com.LibraryManagementSystem.LibraryMangementSystem

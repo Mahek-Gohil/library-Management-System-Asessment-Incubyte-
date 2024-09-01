@@ -25,6 +25,8 @@ public class LibraryMangementSystem {
     public Book getBook(String isbn) {
         return books.get(isbn);
     }
+    /*This method allows user to borrrow existing book from library.
+     Method also checks if book is not already borrowed and if book exists in Library*/
     public void borrowBook(String isbn) throws BookNotFoundException, BookAlreadyBorrowedException {
         Book book = books.get(isbn);
         if (book == null) {
@@ -34,5 +36,10 @@ public class LibraryMangementSystem {
             throw new BookAlreadyBorrowedException("Error: Book with ISBN " + isbn + " is already borrowed.");
         }
         book.borrowBook();
+    }
+    //This method is used to return borrowed book to library.
+    public void returnBook(String isbn) throws BookNotFoundException {
+        Book book = getBook(isbn);
+        book.returnBook();
     }
 }
