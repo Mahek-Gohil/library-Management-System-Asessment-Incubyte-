@@ -4,11 +4,14 @@ import com.LibraryManagementSystem.Exceptions.BookAlreadyBorrowedException;
 import com.LibraryManagementSystem.Exceptions.BookNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LibraryMangementSystemTest {
 
-    private LibraryMangementSystem library;
+    private LibraryManagementSystem library;
 
     @Test
     public void testcheck() {
@@ -18,7 +21,7 @@ public class LibraryMangementSystemTest {
 
     @BeforeEach
     public void setupLibrary() {
-        library = new LibraryMangementSystem();
+        library = new LibraryManagementSystem();
     }
 
     @Test
