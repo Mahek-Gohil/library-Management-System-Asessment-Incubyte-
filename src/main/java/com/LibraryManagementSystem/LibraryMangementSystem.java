@@ -1,6 +1,8 @@
 package com.LibraryManagementSystem;
 
 import com.LibraryManagementSystem.Book;
+import com.LibraryManagementSystem.Exceptions.BookAlreadyBorrowedException;
+import com.LibraryManagementSystem.Exceptions.BookNotFoundException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,5 +24,15 @@ public class LibraryMangementSystem {
     //This method returns Book isbn if it's available in HashMap books
     public Book getBook(String isbn) {
         return books.get(isbn);
+    }
+    public void borrowBook(String isbn) throws BookNotFoundException, BookAlreadyBorrowedException {
+        Book book = books.get(isbn);
+        if (book == null) {
+            throw new BookNotFoundException("Error: Book with ISBN " + isbn + " not found.");
+        }
+        if (book.bookBorrowed()) {
+            throw new BookAlreadyBorrowedException("Error: Book with ISBN " + isbn + " is already borrowed.");
+        }
+        book.borrowBook();
     }
 }

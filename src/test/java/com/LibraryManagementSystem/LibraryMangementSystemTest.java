@@ -1,5 +1,6 @@
 package com.LibraryManagementSystem;
 
+import com.LibraryManagementSystem.Exceptions.BookAlreadyBorrowedException;
 import com.LibraryManagementSystem.Exceptions.BookNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
