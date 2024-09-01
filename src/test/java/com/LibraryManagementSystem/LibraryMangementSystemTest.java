@@ -29,11 +29,19 @@ public class LibraryMangementSystemTest {
     }
 
     @Test
-    public void testGetBook() throws BookNotFoundException {
+    public void testGetBookFromLibrary() throws BookNotFoundException {
         String isbn = "78-0451524935";
         String author = "George Orwell";
         library.addBook(isbn, "1984", author, 1949);
         Book book = library.getBook(isbn);
         assertEquals(isbn, book.getIsbn(), "Book ISBN should match.");
+    }
+    @Test
+    public void testBorrowBookFromLibrary() throws BookNotFoundException, BookAlreadyBorrowedException {
+        String isbn = "1234567890";
+        library.addBook(isbn, "The Great Gatsby", "F. Scott Fitzgerald", 1925);
+        library.borrowBook(isbn);
+        Book book = library.getBook(isbn);
+        assertTrue(book.bookBorrowed(), "Book should be marked as borrowed after borrowing.");
     }
 }
