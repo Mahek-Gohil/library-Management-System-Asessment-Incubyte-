@@ -76,13 +76,16 @@ public class LibraryMangementSystemTest {
         }, "BookAlreadyBorrowedException would be thrown if the book is already borrowed.");
     }
     @Test
-    public void testViewAvailableBooksWhereAllBooksAreAvailable() {
-        library.addBook("78-0451524935", "1984", "George Orwell", 1949);
-        library.addBook("978-0439139601", "Harry Potter and the Goblet of Fire", "J.K. Rowling", 2000);
-        library.addBook("978-0140449136"	,"The Odyssey","Homer",800);
+    public void testViewAvailableBooksWhereAllBooksAreAvailable() throws BookNotFoundException, BookAlreadyBorrowedException {
+        String isbn = "978-0439139601";
+        library.addBook("978-0451524935","1984", "George Orwell", 1949);
+        library.addBook("978-0439139601","Harry Potter and the Goblet of Fire", "J.K. Rowling", 2000);
+        library.addBook("978-0140449136","The Odyssey","Homer",800);
         library.addBook("978-0316769488","The Catcher in the Rye","J.D. Salinger",1951);
+        library.borrowBook(isbn);
         List<Book> availableBooks = library.viewAllAvailableBooks();
-        assertEquals(2, availableBooks.size(), "All books should be available.");
+        assertEquals(3, availableBooks.size(), "Three books should be available.");
+        assertEquals("1984", availableBooks.get(1).getTitle(), "The available book should be '1984'.");
     }
 
 }

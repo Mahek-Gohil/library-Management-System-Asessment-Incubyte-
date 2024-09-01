@@ -4,5 +4,5 @@ com/LibraryManagementSystem/Exceptions/BookNotFoundException.java
  com.LibraryManagementSystem.Exceptions.BookNotFoundException
 com/LibraryManagementSystem/Exceptions/BookAlreadyBorrowedException.java
  com.LibraryManagementSystem.Exceptions.BookAlreadyBorrowedException
-com/LibraryManagementSystem/LibraryMangementSystem.java
- com.LibraryManagementSystem.LibraryMangementSystem
+com/LibraryManagementSystem/LibraryManagementSystem.java
+ com.LibraryManagementSystem.LibraryManagementSystem
