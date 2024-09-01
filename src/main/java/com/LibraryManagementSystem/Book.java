@@ -5,14 +5,14 @@ public class Book {
     private String title;
     private String author;
     private int year;
-    private boolean isBorrowed;
+    private boolean bookBorrowed;
 
     public Book(String isbn, String title, String author, int year) {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
         this.year = year;
-        this.isBorrowed = false;
+        this.bookBorrowed = false;
     }
     public String getIsbn() {
         return isbn;
@@ -30,16 +30,16 @@ public class Book {
         return year;
     }
 
-    public boolean isBorrowed() {
-        return isBorrowed;
+    public boolean bookBorrowed() {
+        return bookBorrowed;
     }
 
-    public void borrow() {
-        isBorrowed = true;
+    public void borrowBook() {
+        bookBorrowed = true;
     }
 
     public void returnBook() {
-        isBorrowed = false;
+        bookBorrowed = false;
     }
 }
 

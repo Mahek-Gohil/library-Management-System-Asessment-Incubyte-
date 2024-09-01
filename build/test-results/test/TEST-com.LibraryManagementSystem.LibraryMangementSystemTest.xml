@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.LibraryManagementSystem.LibraryMangementSystemTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-09-01T04:38:54" hostname="ASUS-VIVOBOOK-1" time="0.056">
+  <properties/>
+  <testcase name="testcheck()" classname="com.LibraryManagementSystem.LibraryMangementSystemTest" time="0.04"/>
+  <testcase name="testGetBook()" classname="com.LibraryManagementSystem.LibraryMangementSystemTest" time="0.009"/>
+  <testcase name="testAddBookToLibrary()" classname="com.LibraryManagementSystem.LibraryMangementSystemTest" time="0.003"/>
+  <system-out><![CDATA[Test Module Running
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
