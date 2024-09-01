@@ -13,11 +13,11 @@ public class LibraryManagementSystem {
     private Map<String, Book> books;
 
     public LibraryManagementSystem() {
-        // Initialization of HashMap
+        // Initialization of HashMap.
         books = new HashMap<>();
     }
 
-    //This method adds Book in HashMap named books
+    //This method adds Book in HashMap named books.
     public void addBook(String isbn, String title, String author, int year) {
         if (!books.containsKey(isbn)) {
             Book newBook = new Book(isbn, title, author, year);
@@ -25,7 +25,7 @@ public class LibraryManagementSystem {
         }
     }
 
-    //This method returns Book isbn if it's available in HashMap books
+    //This method returns Book isbn if it's available in HashMap books.
     public Book getBook(String isbn) throws BookNotFoundException {
         if (!books.containsKey(isbn)) {
             throw new BookNotFoundException("Book with ISBN " + isbn + " not found.");
@@ -34,7 +34,7 @@ public class LibraryManagementSystem {
     }
 
     /*This method allows user to borrow existing book from library.
-     Method also checks if book is not already borrowed and if book exists in Library*/
+     Method also checks if book is not already borrowed and if book exists in Library.*/
     public void borrowBook(String isbn) throws BookNotFoundException, BookAlreadyBorrowedException {
         Book book = books.get(isbn);
         if (book == null) {
