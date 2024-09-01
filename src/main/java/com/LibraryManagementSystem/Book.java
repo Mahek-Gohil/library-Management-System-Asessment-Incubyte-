@@ -14,17 +14,33 @@ public class Book {
         this.year = year;
         this.isBorrowed = false;
     }
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getYear() {
+        return year;
+    }
 
     public boolean isBorrowed() {
         return isBorrowed;
     }
 
     public void borrow() {
-        this.isBorrowed = true;
+        isBorrowed = true;
     }
 
     public void returnBook() {
-        this.isBorrowed = false;
+        isBorrowed = false;
     }
 }
+
 

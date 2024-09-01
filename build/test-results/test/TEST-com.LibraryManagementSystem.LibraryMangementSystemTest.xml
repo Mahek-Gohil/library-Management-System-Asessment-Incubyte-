@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.LibraryManagementSystem.LibraryMangementSystemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-09-01T03:34:18" hostname="ASUS-VIVOBOOK-1" time="0.08">
-  <properties/>
-  <testcase name="testAddBook()" classname="com.LibraryManagementSystem.LibraryMangementSystemTest" time="0.08"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
