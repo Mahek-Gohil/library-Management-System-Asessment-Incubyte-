@@ -34,6 +34,7 @@ This test file focuses on the Book class and checks:
 
 - Borrowing a book changes its status correctly.
 - Returning a borrowed book marks it as available.
+- 
 **'LibraryManagementSystemTest'**
 
  This test file focuses on the Library class and checks:
@@ -75,6 +76,7 @@ git clone https://github.com/Mahek-Gohil/library-Management-System-Asessment-Inc
 - Go to File -> Project Structure.
 
 - Under Project, set the Project SDK to Java 11 or later.
+  
 2.Add JUnit 5:
 
 - Go to File -> Project Structure -> Modules.
@@ -86,6 +88,7 @@ git clone https://github.com/Mahek-Gohil/library-Management-System-Asessment-Inc
 - Choose "Library" -> "From Gradle" and search for junit:junit:5.7.0.
 
 - Add JUnit 5 to your project dependencies.
+  
 **5. Build the Project**
 
 - IntelliJ IDEA will automatically detect and compile the project files. If not, you can manually build the project by going to Build -> Build Project.
@@ -99,7 +102,6 @@ git clone https://github.com/Mahek-Gohil/library-Management-System-Asessment-Inc
 - Right-click on the test class or method and select Run 'BookTest' or Run 'LibraryManagementSystemTest'.
 ## Test Coverage And Report
 
-## Screenshots
 **Test Coverage**
 
 ![test Coverage](TestCoverage.png)
